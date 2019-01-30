@@ -56,8 +56,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   min-height: 100%;
 }
 #footer {
-  background-color: #444;
-  color: #aaa;
+  background-color: #474747;
+  color: #E6E6E6;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
@@ -112,7 +112,7 @@ nav h1 a {
 
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
-    color: #01447e;
+    color: #02498D;
     text-decoration: underline;
 }
 /* ====================== Map ====================== */
@@ -237,7 +237,7 @@ nav h1 a {
   width: 100%;
 }
 #restaurant-name {
-  color: #f18200;
+  color: #7A3D00;
   font-family: Arial,sans-serif;
   font-size: 20pt;
   font-weight: 200;
