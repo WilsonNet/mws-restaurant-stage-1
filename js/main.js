@@ -4,6 +4,8 @@ let restaurants,
 var newMap
 var markers = []
 
+
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -217,6 +219,6 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 // Service Worker
 
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('/sw/sw.js').then(reg => console.log('Registration succeeded. Scope is ' + reg.scope))
+  navigator.serviceWorker.register('/sw.js').then(reg => console.log('Registration succeeded. Scope is ' + reg.scope))
  .catch(error => console.log('Registration failed with ' + error))
 }
