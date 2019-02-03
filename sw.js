@@ -1,3 +1,5 @@
+const STATIC_VERSION = 'rest-v7';
+
 self.addEventListener('install', evt => {
     const urlsToCach = [
         '/',
@@ -11,10 +13,23 @@ self.addEventListener('install', evt => {
     ];
 
     evt.waitUntil(
-        caches.open('v1').then(cache => cache.addAll(urlsToCach))
+        caches.open(STATIC_VERSION).then(cache => cache.addAll(urlsToCach))
     );
 
 });
+
+self.addEventListener('activate', evt=> {
+    evt.waitUntil (
+        caches.keys().then(cacheNames =>{
+            return Promise.all(
+            cacheNames.filter( cacheName=>{
+                return cacheName.startsWith('rest-') && cacheName != STATIC_VERSION;
+            }).map(cacheName => {
+                return caches.delete(cacheName);
+            }));
+        })
+    )
+})
 
 
 self.addEventListener('fetch', evt => {
