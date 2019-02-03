@@ -217,8 +217,9 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 } */
 
 // Service Worker
-
+// Check if navigator supports service worker
 if (navigator.serviceWorker) {
+  // Install Service Worker
   navigator.serviceWorker.register('/sw.js').then(reg => console.log('Registration succeeded. Scope is ' + reg.scope))
  .catch(error => console.log('Registration failed with ' + error))
 }
